@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2022.7.1)  11 NOV 2022 06:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2022.7.1)  4 DEC 2022 01:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1382,7 +1382,7 @@ ogo.jpg>] (Beamer.toc) [2
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 326.
+LaTeX Warning: Empty bibliography on input line 334.
 
 [5
 
@@ -1413,10 +1413,10 @@ Package logreq Info: Writing requests to 'Beamer.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36197 strings out of 478659
- 749450 string characters out of 2855778
+ 36228 strings out of 478659
+ 750366 string characters out of 2855778
  1377286 words of memory out of 3000000
- 53623 multiletter control sequences out of 15000+600000
+ 53654 multiletter control sequences out of 15000+600000
  412350 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,12n,122p,1133b,806s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1428,7 +1428,7 @@ sfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
 12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Pro
 gram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiK
 TeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on Beamer.pdf (7 pages, 152124 bytes).
+Output written on Beamer.pdf (7 pages, 152993 bytes).
 PDF statistics:
  141 PDF objects out of 1000 (max. 8388607)
  20 named destinations out of 1000 (max. 500000)
