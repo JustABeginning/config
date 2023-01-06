@@ -1,6 +1,6 @@
 -> Command Prompt Custom Prompt :
 
-setx prompt ^[[91m┌──[%username%^[[93m@^[[96m%computername%^[[91m]-[^[[92m$P^[[91m]$_^[[91m└──$G$S^[[93m#$S
+setx prompt ^[[91m┌──[%username%^[[93m@^[[96m%computername%^[[91m]-[^[[92m$P^[[91m]$_^[[91m└──$G$S^[[93m#$S^[[37m
 
 Replace all "^[" with "CTRL+["
 
