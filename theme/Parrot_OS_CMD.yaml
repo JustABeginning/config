@@ -1,0 +1,41 @@
+- Command Prompt Custom Prompt:
+  command: setx prompt ^[[91m┌──[%username%^[[93m@^[[96m%computername%^[[91m]-[^[[92m$P^[[91m]$_^[[91m└──$G$S^[[93m#$S^[[37m
+
+  note: Replace all "^[" with "CTRL+["
+
+- Powershell Custom Prompt:
+  file: $PROFILE.AllUsersAllHosts
+
+  config:
+    - universal_profile: |
+        if (!(Test-Path -Path $PROFILE.AllUsersAllHosts)) {
+            New-Item -ItemType File -Path $PROFILE.AllUsersAllHosts -Force
+        }
+    - custom_prompt: |
+        function prompt {
+            $identity = [Security.Principal.WindowsIdentity]::GetCurrent()
+              $principal = [Security.Principal.WindowsPrincipal] $identity
+              $adminRole = [Security.Principal.WindowsBuiltInRole]::Administrator
+              $color = Get-Random -Min 1 -Max 16
+
+              Write-Host ("`n" + $(if (Test-Path variable:/PSDebugContext) { '[DBG]: ' }
+                    elseif($principal.IsInRole($adminRole)) { "[ADMIN]: " }
+                    else { '' }
+                    ) + $(Get-Date) + '_' + ($env:COMPUTERNAME)+ ' ' + $(Get-Location) +
+                  $(if ($NestedPromptLevel -ge 1) { '>>' }) + '>' + "`n") -ForegroundColor $color
+              return " "
+        }
+    - navigation_menu:
+      command: Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+    - autocompletion:
+      command: |
+        Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
+        Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
+    - new_alias:
+      command: New-Alias open ii
+
+- System Dark Mode (via Powershell):
+  command: New-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name SystemUsesLightTheme -Value 0 -Type Dword -Force; New-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0 -Type Dword -Force
+
+- System Light Mode (via Powershell):
+  command: New-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name SystemUsesLightTheme -Value 0 -Type Dword -Force; New-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 1 -Type Dword -Force
