@@ -1,0 +1,33 @@
+{
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSave": true,
+  // clangd config
+  "clangd.path": "C:\\Program Files\\LLVM\\bin\\clangd.exe",
+  // python config
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.formatting.autopep8Path": "C:\\Python311\\Scripts\\autopep8.exe",
+  // codelens
+  "codeLens.enable": true,
+  "java.referencesCodeLens.enabled": true,
+  "java.jdt.ls.vmargs": "-javaagent:%LOCALAPPDATA%\\nvim\\lombok\\lombok.jar",
+  "java.project.referencedLibraries": [
+    "C:\\Program Files\\Java\\javafx-sdk-19\\lib\\*.jar"
+  ],
+  // yaml
+  "yaml.enable": true,
+  "yaml.validate": true,
+  "yaml.format.enable": true,
+  "yaml.completion": true,
+  // asm-lsp
+  "languageserver": {
+    "nasm-lsp": {
+      "command": "%LOCALAPPDATA%\\nvim\\nasm-lsp\\nasm-lsp.exe",
+      "filetypes": [
+        "asm",
+        "s",
+        "S"
+      ]
+    }
+  }
+}
