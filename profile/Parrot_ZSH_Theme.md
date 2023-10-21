@@ -16,7 +16,7 @@
 
   1. Add the line `ZSH_THEME="parrot"` in `~/.zshrc` file.
   
-      + Follow this [file](https://github.com/JustABeginning/config/blob/main/profile/termux/.zshrc)
+      + Follow this [file](https://github.com/JustABeginning/config/blob/master/profile/termux/.zshrc)
         for more clarity
 
   1. Restart Termux
