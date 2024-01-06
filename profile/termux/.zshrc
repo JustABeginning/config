@@ -116,6 +116,10 @@ export GPG_TTY=$(tty)
 SDK_ROOT=~/Android/Tools/SDK_ROOT
 export ANDROID_HOME=$SDK_ROOT
 
+# Apache2 DIR
+AP2_DIR="/data/data/com.termux/files/usr/share/apache2/default-site/htdocs"
+export APACHE2_DIR=$AP2_DIR
+
 # Set GUI Display
 export DISPLAY=":1"
 
