@@ -1,6 +1,8 @@
 " VIM Key Mappings (Custom)
 autocmd Filetype * setlocal cpoptions+=I
 autocmd Filetype arduino,json setlocal shiftwidth=2 tabstop=2
+" Set `zsh` as `sh`
+autocmd FileType zsh setlocal ft=sh
 "autocmd Filetype tex setlocal encoding=utf-8
 "autocmd Filetype asm setlocal ft=nasm
 "autocmd Filetype asm setlocal ft=fasm

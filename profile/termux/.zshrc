@@ -109,4 +109,15 @@ source ~/GitHub/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# GPG Environment
 export GPG_TTY=$(tty)
+
+# Android SDK_ROOT
+SDK_ROOT=~/Android/Tools/SDK_ROOT
+export ANDROID_HOME=$SDK_ROOT
+
+# Set GUI Display
+export DISPLAY=":1"
+
+# Termux Open URL
+export BROWSER=termux-open-url
