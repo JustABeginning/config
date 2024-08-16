@@ -47,6 +47,19 @@ else
     " IntelliJ IDEA Comrade Neovim
     "Plug 'beeender/Comrade'
 
+    " UltiSnips Plugin
+    " Track the engine.
+    " Plug 'SirVer/ultisnips'
+
+    " LuaSnip Plugin
+    " follow latest release and install jsregexp.
+    Plug 'L3MON4D3/LuaSnip', {'tag': 'v2.*', 'do': 'make install_jsregexp'}
+    " Replace <CurrentMajor> by the latest released major (first number of
+    " latest release)
+
+    " Snippets are separated from the engine. Add this if you want them:
+    " Plug 'honza/vim-snippets'
+
     " Initialize plugin system
     " - Automatically executes `filetype plugin indent on` and `syntax enable`.
     call plug#end()
@@ -63,6 +76,13 @@ else
     source $homie/plug-config/treesitter.vim
     source $homie/plug-config/coc.vim
     source $homie/plug-config/leetcode.vim
+    source $homie/plug-config/vimtex.vim
+    source $homie/plug-config/luasnip.vim
+
+    " Lua Config
+    lua require("luasnip.loaders.from_lua").lazy_load({ paths = {"./lua/snippets" } })
+    " End Lua Config
+
 endif
 
 " Common Config for Neovim & VSCode

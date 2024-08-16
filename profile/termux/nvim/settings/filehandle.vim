@@ -13,7 +13,7 @@ au BufNewFile,BufRead *.ovpn setfiletype openvpn | set commentstring=#%s
 "au BufNewFile,BufRead *.java setfiletype java
 
 " Python3 Path
-let g:python3_host_prog = 'C:\Python310\python.exe'
+let g:python3_host_prog = 'python'
 " Disable Ruby Provider
 let g:loaded_ruby_provider = 0
 " Disable Perl Provider
@@ -74,3 +74,8 @@ nmap <leader>cf :bd<cr>
 nmap <leader>lp :let @a=expand('%:r')<cr>:!start <C-r>a.pdf<cr>:call setreg('a',[])<cr>
 " Mapping to delete *.bak* type files
 nmap <leader>db :!del *.bak*<cr>
+
+" Spell Check
+setlocal spell
+set spelllang=en_gb
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
