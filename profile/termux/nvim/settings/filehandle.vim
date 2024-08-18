@@ -53,7 +53,7 @@ function! SetName()
 endfunction
 
 " For auto-indenting a set of lines
-autocmd FileType tex,st nnoremap <buffer> ti :!"C:\Program Files\MiKTeX\scripts\latexindent\latexindent.exe" -w -s %<cr>
+autocmd FileType tex,st nnoremap <buffer> ti :!"latexindent" -w -s %<cr>
 "autocmd FileType javascript nnoremap <buffer> <leader>ah :let @b=line('.')<cr>ggVG:call RangeJsBeautify()<cr>:<C-r>b<cr>
 "autocmd FileType json nnoremap <buffer> <leader>ah :let @b=line('.')<cr>ggVG:call RangeJsonBeautify()<cr>:<C-r>b<cr>
 "autocmd FileType jsx nnoremap <buffer> <leader>ah :let @b=line('.')<cr>ggVG:call RangeJsxBeautify()<cr>:<C-r>b<cr>
