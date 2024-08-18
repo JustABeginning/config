@@ -25,12 +25,12 @@ require('onedark').setup  {
         functions = 'none',
         strings = 'none',
         variables = 'none'
-        },
+    },
 
     -- Lualine options --
     lualine = {
         transparent = false, -- lualine center bar transparency
-        },
+    },
 
     -- Custom Highlights --
     colors = {}, -- Override default colors
@@ -41,8 +41,8 @@ require('onedark').setup  {
         darker = true, -- darker colors for diagnostic
         undercurl = true,   -- use undercurl instead of underline for diagnostics
         background = true,    -- use background color for virtual text
-        },
-    }
+    },
+}
 EOF
 "Extra parameters for palenight theme
 "let g:lightline = { 'colorscheme': 'palenight' }

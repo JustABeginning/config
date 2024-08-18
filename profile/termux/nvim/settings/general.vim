@@ -48,7 +48,8 @@ set showbreak=..
 set tabstop=4
 set expandtab
 set shiftwidth=4
-set statusline+=%F
+" Conflict with coc-nvim
+"set statusline+=%F
 "set paste " Putting Vim in Paste mode
 " For Universal Copy/Paste
 "set clipboard=unnamed

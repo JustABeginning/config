@@ -68,16 +68,19 @@ else
     "   syntax off            " Disable syntax highlighting
 
     " Sourcing Config Files
+    " Theme Load
     source $homie/settings/theme.vim
-    source $homie/settings/general.vim
-    source $homie/settings/navigation.vim
-    source $homie/settings/filehandle.vim
-    source $homie/settings/nvimap.vim
+    " Plug Config Load
     source $homie/plug-config/treesitter.vim
     source $homie/plug-config/coc.vim
     source $homie/plug-config/leetcode.vim
     source $homie/plug-config/vimtex.vim
     source $homie/plug-config/luasnip.vim
+    " User Settings Load
+    source $homie/settings/general.vim
+    source $homie/settings/navigation.vim
+    source $homie/settings/filehandle.vim
+    source $homie/settings/nvimap.vim
 
     " Lua Config
     lua require("luasnip.loaders.from_lua").lazy_load({ paths = {"./lua/snippets" } })
