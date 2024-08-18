@@ -73,7 +73,7 @@ nmap <leader>cf :bd<cr>
 " Mapping to open pdf for latex
 nmap <leader>lp :let @a=expand('%:r')<cr>:!start <C-r>a.pdf<cr>:call setreg('a',[])<cr>
 " Mapping to delete *.bak* type files
-nmap <leader>db :let @a=execute('pwd')<cr>:call system('export DEL_OBJ=\"'.shellescape(getreg('a')).'/*.bak*\"')<cr>:call setreg('a', [])<cr>
+nmap <leader>db :let $DEL_OBJ=expand('%:h')<cr>:!rm -v "$DEL_OBJ"/*.bak*<cr>
 
 " Spell Check
 setlocal spell
