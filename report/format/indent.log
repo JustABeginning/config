@@ -1,6 +1,6 @@
 INFO:  latexindent version 3.24.4, 2024-07-18, a script to indent .tex files
        latexindent lives here: /data/data/com.termux/files/usr/share/texlive/2024/texmf-dist/scripts/latexindent/
-       Sun Aug 18 23:29:07 2024
+       Tue Aug 20 00:20:42 2024
        Filename: Thesis.tex
 INFO:  Processing switches:
        -s|--silent: Silent mode active (you have used either -s or --silent)

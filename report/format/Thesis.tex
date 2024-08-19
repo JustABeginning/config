@@ -77,6 +77,8 @@
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{multirow}
+%\usepackage{longtable}
+\usepackage{xltabular}
 
 % Changing tabularxcolumn type
 %\let\oldtabx\tabularxcolumn
@@ -113,7 +115,7 @@
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 \newcolumntype{L}{>{\raggedleft\arraybackslash}X}
 \newcolumntype{x}{>{\raggedright\arraybackslash}X}
-\newcolumntype{m}{>{$}c<{$}}
+\newcolumntype{M}{>{$}c<{$}}
 \newcolumntype{y}{>{$}l<{$}}
 \newcolumntype{z}{>{$}r<{$}}
 \newcolumntype{Q}[1]{>{\hspace{#1\textwidth}$}c<{$}}
@@ -123,57 +125,57 @@
 % Equation environments
 \newenvironment{condition}[1]
 {\hspace{0.3\textwidth} #1,\par\medskip
-	\tabularx{\columnwidth}{Q{0.3} m x}
+	\tabularx{\columnwidth}{Q{0.3} M x}
 }
 {\endtabularx\\[\belowdisplayskip]}
 \newenvironment{condition*}[1]
 {#1,\par\medskip
-	\tabularx{\columnwidth}{Q{0.2} m x}
+	\tabularx{\columnwidth}{Q{0.2} M x}
 }
 {\endtabularx\\[\belowdisplayskip]}
 \newenvironment{conditionA*}[2]
 {\hspace{#1\textwidth} #2,\par\medskip
-	\tabularx{\columnwidth}{Q{\fpeval{#1+0.05}} m x}
+	\tabularx{\columnwidth}{Q{\fpeval{#1+0.05}} M x}
 }
 {\endtabularx\\[\belowdisplayskip]}
 \newenvironment{conditionB*}[1]
 {#1,\par\medskip
-	\tabularx{\columnwidth}{Q{0.05} m x}
+	\tabularx{\columnwidth}{Q{0.05} M x}
 }
 {\endtabularx\\[\belowdisplayskip]}
 \newenvironment{conditionC*}[1]
 {\hspace{-20pt} #1,\par\medskip
-	\tabularx{\columnwidth}{Q{0.2} m x}
+	\tabularx{\columnwidth}{Q{0.2} M x}
 }
 {\endtabularx\\[\belowdisplayskip]}
 \newenvironment{conditionD*}[3]
 {\hspace{#1\textwidth} #3,\par\medskip
-	\tabularx{\columnwidth}{Q{\fpeval{#1+#2}} m x}
+	\tabularx{\columnwidth}{Q{\fpeval{#1+#2}} M x}
 }
 {\endtabularx\\[\belowdisplayskip]}
 \newenvironment{describe}[1]
 {#1,\par\medskip
-	\tabularx{\columnwidth}{D{0.2} m x}
+	\tabularx{\columnwidth}{D{0.2} M x}
 }
 {\endtabularx\\[\belowdisplayskip]}
 \newenvironment{describe*}[1]
 {#1,\par\medskip
-	\tabularx{\columnwidth}{z m y}
+	\tabularx{\columnwidth}{z M y}
 }
 {\endtabularx\\[\belowdisplayskip]}
 \newenvironment{describeA*}[2]
 {\hspace{#1\textwidth} #2,\par\medskip
-	\tabularx{\columnwidth}{R{\fpeval{#1+0.05}} m y}
+	\tabularx{\columnwidth}{R{\fpeval{#1+0.05}} M y}
 }
 {\endtabularx\\[\belowdisplayskip]}
 \newenvironment{describeB*}[1]
 {#1,\par\medskip
-	\tabularx{\columnwidth}{R{0.2} m y}
+	\tabularx{\columnwidth}{R{0.2} M y}
 }
 {\endtabularx\\[\belowdisplayskip]}
 \newenvironment{describeD*}[3]
 {\hspace{#1\textwidth} #3,\par\medskip
-	\tabularx{\columnwidth}{R{\fpeval{#1+#2}} m y}
+	\tabularx{\columnwidth}{R{\fpeval{#1+#2}} M y}
 }
 {\endtabularx\\[\belowdisplayskip]}
 
