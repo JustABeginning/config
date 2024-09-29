@@ -53,6 +53,22 @@ ls.add_snippets("tex", {
             i(1)
         }
     )),
+    -- SubFloat
+    s("subf", fmt(
+        [[
+        \subfloat[{}]{{{}}}
+        ]], {
+            i(1), i(0)
+        }
+    )),
+    -- IncludeGraphics
+    s("incg", fmt(
+        [[
+        \includegraphics[{}]{{{}}}
+        ]], {
+            i(1), i(0)
+        }
+    )),
     -- Table
     s("tabl", fmt(
         [[
