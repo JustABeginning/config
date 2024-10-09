@@ -1,21 +1,20 @@
-INFO:  latexindent.exe version 3.18, 2022-06-12, a script to indent .tex files
-       latexindent.exe lives here: C:/Program Files/MiKTeX/scripts/latexindent/
-       Wed Mar  8 20:59:20 2023
+INFO:  latexindent version 3.24.4, 2024-07-18, a script to indent .tex files
+       latexindent lives here: /data/data/com.termux/files/usr/share/texlive/2024/texmf-dist/scripts/latexindent/
+       Wed Oct  9 12:09:25 2024
        Filename: Beamer.tex
 INFO:  Processing switches:
        -s|--silent: Silent mode active (you have used either -s or --silent)
        -w|--overwrite: Overwrite mode active, will make a back up before overwriting
-INFO:  Directory for backup files and indent.log:
+INFO:  Directory for backup files and log file indent.log:
        .
 INFO:  YAML settings read: defaultSettings.yaml
-       Reading defaultSettings.yaml from C:/Program Files/MiKTeX/scripts/latexindent/defaultSettings.yaml
-INFO:  YAML settings read: indentconfig.yaml or .indentconfig.yaml
-       Home directory is C:\Users\saswa (didn't find either indentconfig.yaml or .indentconfig.yaml)
-       To specify user settings you would put indentconfig.yaml here: C:\Users\saswa/indentconfig.yaml
-       Alternatively, you can use the hidden file .indentconfig.yaml as: C:\Users\saswa/.indentconfig.yaml
+       Reading defaultSettings.yaml from /data/data/com.termux/files/usr/share/texlive/2024/texmf-dist/scripts/latexindent/defaultSettings.yaml
+INFO:  YAML reading settings
+       Home directory is /data/data/com.termux/files/home
+       latexindent.pl didn't find indentconfig.yaml or .indentconfig.yaml
+       see all possible locations: https://latexindentpl.readthedocs.io/en/latest/sec-appendices.html#indentconfig-options)
 INFO:  Backup procedure (-w flag active):
-       copying Beamer.tex to ./Beamer.bak0
-       Backup file: ./Beamer.bak0
+       Backing up Beamer.tex to ./Beamer.bak0...
        Beamer.tex will be overwritten after indentation
 INFO:  Phase 1: searching for objects
 INFO:  Phase 2: finding surrounding indentation

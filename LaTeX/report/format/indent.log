@@ -1,12 +1,12 @@
 INFO:  latexindent version 3.24.4, 2024-07-18, a script to indent .tex files
        latexindent lives here: /data/data/com.termux/files/usr/share/texlive/2024/texmf-dist/scripts/latexindent/
-       Wed Sep  4 20:39:13 2024
-       Filename: /data/data/com.termux/files/home/GitHub/config/report/format/Thesis.tex
+       Wed Oct  9 12:08:28 2024
+       Filename: Thesis.tex
 INFO:  Processing switches:
        -s|--silent: Silent mode active (you have used either -s or --silent)
        -w|--overwrite: Overwrite mode active, will make a back up before overwriting
 INFO:  Directory for backup files and log file indent.log:
-       /data/data/com.termux/files/home/GitHub/config/report/format
+       .
 INFO:  YAML settings read: defaultSettings.yaml
        Reading defaultSettings.yaml from /data/data/com.termux/files/usr/share/texlive/2024/texmf-dist/scripts/latexindent/defaultSettings.yaml
 INFO:  YAML reading settings
@@ -14,14 +14,14 @@ INFO:  YAML reading settings
        latexindent.pl didn't find indentconfig.yaml or .indentconfig.yaml
        see all possible locations: https://latexindentpl.readthedocs.io/en/latest/sec-appendices.html#indentconfig-options)
 INFO:  Backup procedure (-w flag active):
-       Backing up /data/data/com.termux/files/home/GitHub/config/report/format/Thesis.tex to /data/data/com.termux/files/home/GitHub/config/report/format/Thesis.bak0...
-       /data/data/com.termux/files/home/GitHub/config/report/format/Thesis.tex will be overwritten after indentation
+       Backing up Thesis.tex to ./Thesis.bak0...
+       Thesis.tex will be overwritten after indentation
 INFO:  Phase 1: searching for objects
 INFO:  Phase 2: finding surrounding indentation
 INFO:  Phase 3: indenting objects
 INFO:  Phase 4: final indentation check
 INFO:  Output routine:
-       Overwriting file /data/data/com.termux/files/home/GitHub/config/report/format/Thesis.tex
+       Overwriting file Thesis.tex
        --------------
 INFO:  Please direct all communication/issues to:
         https://github.com/cmhughes/latexindent.pl
