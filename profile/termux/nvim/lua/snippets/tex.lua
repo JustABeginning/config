@@ -99,6 +99,35 @@ ls.add_snippets("tex", {
             i(1), i(2), i(0)
         }
     )),
+    -- adjustbox
+    s("adjb", fmt(
+        [[
+        \adjustbox{{{}}}{{%
+            {}
+        }}
+        ]], {
+            i(1), i(0)
+        }
+    )),
+    -- multicols
+    s("mulc", fmt(
+        [[
+        \begin{{multicols}}{{{}}}
+            {}
+        \end{{multicols}}
+        ]], {
+            i(1), i(0)
+        }
+    )),
+    -- Alignment
+    -- columnbreak
+    s("cb", t("\\columnbreak")),
+    -- centering
+    s("cn", t("\\centering")),
+    -- raggedright
+    s("rr", t("\\raggedright")),
+    -- raggedleft
+    s("rl", t("\\raggedleft")),
     -- Text
     -- Italics Text
     s("it", fmt(
