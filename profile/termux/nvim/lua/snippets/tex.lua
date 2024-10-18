@@ -157,7 +157,7 @@ ls.add_snippets("tex", {
     -- display math
     s("dm", fmt(
         [[
-        \[{}\]
+        \[ {} \]
         ]], {
             i(1)
         }
