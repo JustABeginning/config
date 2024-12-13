@@ -117,13 +117,13 @@ return
 !,::
 Send, {Media_Prev}
 return
-<^>,::
+<^>!,::
 Send, {Media_Prev}
 return
 !.::
 Send, {Media_Next}
 return
-<^>.::
+<^>!.::
 Send, {Media_Next}
 return
 !i::
