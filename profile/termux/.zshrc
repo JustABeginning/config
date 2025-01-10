@@ -113,7 +113,7 @@ source ~/GitHub/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 export GPG_TTY=$(tty)
 
 # Android SDK_ROOT
-SDK_ROOT=~/Android/Tools/SDK_ROOT
+SDK_ROOT=$HOME/Android/Tools/SDK_ROOT
 export ANDROID_HOME=$SDK_ROOT
 
 # Apache2 DIR
