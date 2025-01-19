@@ -9,6 +9,8 @@ set /A level=%level%
 WMIC Path Win32_Battery Get BatteryStatus | find /I /V "battery" > %tmp_val%
 set /p status=< %tmp_val%
 set /A status=%status%
+powershell -Command "Get-Ciminstance -Namespace root/WMI -ClassName WmiMonitorBrightness" | find "CurrentBrightness" > %tmp_val%
+set /p brightness=< %tmp_val%
 :: Delete TEMP File
 :del_tmpVal
 if exist %tmp_val% (
@@ -22,6 +24,8 @@ if %status%==2 (
 ) else (
     echo %tab%Battery Mode: DISCHARGING>> %setBI%
 )
+echo.>> %setBI%
+echo %tab%%brightness% %%>> %setBI%
 echo.
 type %setBI%
 :del_BI
