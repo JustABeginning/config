@@ -53,7 +53,7 @@ function! SetName()
 endfunction
 
 " For auto-indenting a set of lines
-autocmd FileType tex,st nnoremap <buffer> ti :!"latexindent" -w -s %<cr>
+autocmd FileType tex,st nnoremap <buffer> ti :!"latexindent.exe" -w -s %<cr>
 " Autoformat for java, c, python, yaml
 autocmd FileType java,c,python,yaml,javascript,dockerfile nnoremap <buffer> ti :call CocAction('format')<cr>
 " Autoformat for vim filetype
