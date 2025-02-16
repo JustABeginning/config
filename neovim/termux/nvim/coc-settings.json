@@ -1,0 +1,17 @@
+{
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSave": true,
+  // coc-sumneko-lua config
+  "Lua.misc.executablePath": "lua-language-server",
+  // python config
+  //"python.linting.enabled": true,
+  //"python.linting.pylintEnabled": true,
+  // yaml
+  "yaml.enable": true,
+  "yaml.validate": true,
+  "yaml.format.enable": true,
+  "yaml.completion": true,
+  // codelens
+  "codeLens.enable": true,
+  "java.referencesCodeLens.enabled": true,
+}
