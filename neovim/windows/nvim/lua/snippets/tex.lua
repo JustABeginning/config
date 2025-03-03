@@ -128,6 +128,25 @@ ls.add_snippets("tex", {
     s("rr", t("\\raggedright")),
     -- raggedleft
     s("rl", t("\\raggedleft")),
+    -- Dimension
+    s("wt", fmt(
+        [[
+        width={}
+        ]], {
+            i(1)
+        }
+    )),
+    s("ht", fmt(
+        [[
+        height={}
+        ]], {
+            i(1)
+        }
+    )),
+    -- textwidth
+    s("tw", t("\\textwidth")),
+    -- textheight
+    s("th", t("\\textheight")),
     -- Text
     -- Italics Text
     s("it", fmt(
