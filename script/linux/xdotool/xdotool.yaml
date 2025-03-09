@@ -1,0 +1,23 @@
+- mouse:
+    - left_click: xdotool click 1
+    - delay_left_click: xdotool sleep 0.1 click 1
+    - right_click: xdotool click 3
+    - delay_right_click: xdotool sleep 0.1 click 3
+    - left_down: xdotool mousedown 1
+    - left_up: xdotool mouseup 1
+    - scroll_up: xdotool click --repeat 15 --delay 10 4
+    - scroll_down: xdotool click --repeat 15 --delay 10 5
+
+- keyboard:
+    - ctrl_click: xdotool keydown ctrl click 1 keyup ctrl
+    - type_char: xdotool sleep 0.1 type <char>
+
+- audio:
+    - volume_up: amixer set Master 5%+
+    - volume_down: amixer set Master 5%-
+    - mute: amixer set Master mute
+    - unmute: amixer set Master unmute
+    - toggle: amixer set Master toggle
+    - pause: playerctl pause
+    - play: playerctl play
+    - play-pause: playerctl play-pause
