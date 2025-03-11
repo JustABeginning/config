@@ -1,0 +1,298 @@
+% Preamble
+
+\documentclass[12pt,a4paper,oneside]{article}
+\usepackage[left=0.75in, right=0.75in, top=1in, bottom=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage{setspace}
+
+% Reducing space before chapter heading
+%\usepackage{titlesec}
+%\titleformat{\chapter}[display]   
+%{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}   
+%\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+
+% Centering section heading
+%\usepackage{sectsty}
+%\sectionfont{\centering}
+
+\renewcommand\baselinestretch{1.35}
+\usepackage{datetime}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\graphicspath{{.}{./images/}{../resources/images/}}
+
+% Bibliography Requirement
+\usepackage[backend=biber,dateabbrev=false,style=ieee,sorting=none]{biblatex}
+\addbibresource{../resources/references/References.bib}
+%\usepackage{cite}
+
+\usepackage[hidelinks]{hyperref}
+
+\setcounter{secnumdepth}{5} % seting level of numbering (default for "report" is 3). With ''-1'' you have non number also for chapters
+\setcounter{tocdepth}{5} % if you want all the levels in your table of contents 
+
+% Custom Headings
+
+\usepackage{xfp}
+\def\fontS{13.5pt}
+\newcommand\myheadingS[1]{\par\medskip{\fontsize{\fontS}{\fpeval{1.2*\fontS}}\selectfont\bfseries#1}\par\smallskip}
+\newcommand\myheadingD[5]{\par\vspace{#1}\hspace{#2}{\fontsize{#3}{\fpeval{1.2*(#3)}}\selectfont\bfseries#4}\par\vspace{#5}}
+\newcommand\myheadingB[4]{\myheadingD{#1}{#2}{\fontS}{#3}{#4}}
+\newcommand\myheadingG[5]{\myheadingB{#1}{#2}{#3}{#4}\hspace{#5}}
+\newcommand\myheadingA[1]{\myheadingG{2mm}{-18pt}{#1}{3mm}{-22pt}}
+\newcommand\myheadingC[2]{\myheadingG{#1}{-18pt}{#2}{3mm}{-22pt}}
+\newcommand\myheadingP[1]{\myheadingB{2mm}{-18pt}{#1}{1mm}}
+\newcommand\myheadingQ[2]{\myheadingB{#1}{-18pt}{#2}{1mm}}
+\newcommand\myheadingF[1]{\myheadingB{5mm}{-18pt}{#1}{2mm}}
+\newcommand\myheadingE[3]{\myheadingB{#1}{-18pt}{#2}{#3}}
+
+% Normal
+\usepackage{float}
+\usepackage{subfig}
+\usepackage[skip=10pt]{caption}
+\captionsetup[subfloat]{captionskip=10pt}
+\usepackage[export]{adjustbox}
+\usepackage{amsmath}
+%\usepackage{breqn}
+\usepackage{siunitx}
+\usepackage{diffcoeff}
+\usepackage{commath}
+\usepackage{amssymb}
+\usepackage{romannum}
+%\AtBeginDocument{\pagenumbering{arabic}}
+\usepackage{enumitem}
+%\usepackage{textgreek}
+\usepackage{xspace}
+\usepackage{multicol}
+
+% Define i.e.,
+\def\ie{i.e.,\@\xspace}
+\def\ve{-ve\@\xspace}
+\def\pe{+ve\@\xspace}
+\def\wrt{w.r.t.\@\xspace}
+\def\eg{e.g.\@\xspace}
+
+% For Tables
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multirow}
+%\usepackage{longtable}
+\usepackage{xltabular}
+
+% Changing tabularxcolumn type
+%\let\oldtabx\tabularxcolumn
+%\newcommand\resetX{\let\tabularxcolumn\oldtabx}
+%\renewcommand\tabularxcolumn[1]{m{#1}}
+
+% Serial No Column
+%\newcounter{count}
+%\newcommand\SL{\thecount\stepcounter{count}}
+%\newcolumntype{N}{>{\centering\thecount\stepcounter{count}}X}
+%\newcommand{\noserial}{\multicolumn{1}{|c|}{}}
+%
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\figref}{Fig.~\ref}
+\newcommand{\tabref}{Table~\ref}
+
+% Numbering equations in align* & gather* environments
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}} 
+
+% For Vectors
+\newcommand\ora{\overrightarrow}
+
+% For Rightarrow
+\newcommand\ra{\rightarrow}
+
+% For Imply
+\newcommand\Ra{\Rightarrow}
+
+% For Complex
+
+\newcommand{\ju}{{j\mkern1mu}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+% Tab Space
+%\newcommand\tab{\hspace*{10mm}}
+\newcommand\tabs{\hspace*{5mm}}
+
+% Columns for equation conditions
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{L}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{x}{>{\raggedright\arraybackslash}X}
+\newcolumntype{M}{>{$}c<{$}}
+\newcolumntype{y}{>{$}l<{$}}
+\newcolumntype{z}{>{$}r<{$}}
+\newcolumntype{Q}[1]{>{\hspace{#1\textwidth}$}c<{$}}
+\newcolumntype{D}[1]{>{\hspace{#1\textwidth}\centering\arraybackslash}X}
+\newcolumntype{R}[1]{>{\hspace{#1\textwidth}$}r<{$}}
+
+% Equation environments
+\newenvironment{condition}[1]
+{\hspace{0.3\textwidth} #1,\par\medskip
+	\tabularx{\columnwidth}{Q{0.3} M x}
+}
+{\endtabularx\\[\belowdisplayskip]}
+\newenvironment{condition*}[1]
+{#1,\par\medskip
+	\tabularx{\columnwidth}{Q{0.2} M x}
+}
+{\endtabularx\\[\belowdisplayskip]}
+\newenvironment{conditionA*}[2]
+{\hspace{#1\textwidth} #2,\par\medskip
+	\tabularx{\columnwidth}{Q{\fpeval{#1+0.05}} M x}
+}
+{\endtabularx\\[\belowdisplayskip]}
+\newenvironment{conditionB*}[1]
+{#1,\par\medskip
+	\tabularx{\columnwidth}{Q{0.05} M x}
+}
+{\endtabularx\\[\belowdisplayskip]}
+\newenvironment{conditionC*}[1]
+{\hspace{-20pt} #1,\par\medskip
+	\tabularx{\columnwidth}{Q{0.2} M x}
+}
+{\endtabularx\\[\belowdisplayskip]}
+\newenvironment{conditionD*}[3]
+{\hspace{#1\textwidth} #3,\par\medskip
+	\tabularx{\columnwidth}{Q{\fpeval{#1+#2}} M x}
+}
+{\endtabularx\\[\belowdisplayskip]}
+\newenvironment{describe}[1]
+{#1,\par\medskip
+	\tabularx{\columnwidth}{D{0.2} M x}
+}
+{\endtabularx\\[\belowdisplayskip]}
+\newenvironment{describe*}[1]
+{#1,\par\medskip
+	\tabularx{\columnwidth}{z M y}
+}
+{\endtabularx\\[\belowdisplayskip]}
+\newenvironment{describeA*}[2]
+{\hspace{#1\textwidth} #2,\par\medskip
+	\tabularx{\columnwidth}{R{\fpeval{#1+0.05}} M y}
+}
+{\endtabularx\\[\belowdisplayskip]}
+\newenvironment{describeB*}[1]
+{#1,\par\medskip
+	\tabularx{\columnwidth}{R{0.2} M y}
+}
+{\endtabularx\\[\belowdisplayskip]}
+\newenvironment{describeD*}[3]
+{\hspace{#1\textwidth} #3,\par\medskip
+	\tabularx{\columnwidth}{R{\fpeval{#1+#2}} M y}
+}
+{\endtabularx\\[\belowdisplayskip]}
+
+% Equation as an item in list
+%\newcommand{\itemEq}[1]{%
+%	\begingroup%
+%	\setlength{\abovedisplayskip}{0pt}%
+%	\setlength{\belowdisplayskip}{0pt}%
+%	\parbox[c]{\linewidth}{\begin{gather*}#1\end{gather*}}%
+%\endgroup}
+
+% Reluctance
+\newcommand\rel{\mathcal R}
+% Permeance
+\newcommand{\perm}{\mathcal{P}}
+
+% Subscript
+\newcommand\tsub[1]{\textsubscript{#1}}
+% Superscript
+\newcommand\tsup[1]{\textsuperscript{#1}}
+% SI Unit
+\DeclareSIUnit\division{div}
+
+% START
+
+% Title
+
+\title{Article Title}
+\author{Author Name}
+\newdate{date}{16}{04}{2022}
+\date{\displaydate{date}}
+
+\begin{document}
+
+\maketitle
+
+%\begin{titlepage}
+%	\begin{center}
+%		\begin{Large}
+%			\textbf{Project Title} \\
+%		\end{Large}
+%		\vspace{0.8cm}
+%		A REPORT \\[0.2cm]
+%		on \\[0.2cm]
+%		Project \& Thesis Part - \Romannum{2} (SUBJECT\_CODE) \\
+%		\vspace{0.4cm}
+%		\textit{by} \\
+%		\vspace{0.4cm}
+%		% Author
+%		\begin{large}
+%			\textbf{Author\_Name} \\
+%		\end{large}
+%		\vspace{0.3cm}
+%		\textbf{Enrolment No. :} ENROLMENT\_NO \\
+%		\vspace{0.8cm}
+%		\textit{under the supervision of} \\
+%		\vspace{0.8cm}
+%		\textbf{DR\@. SUPERVISOR\_NAME} \\
+%		\vspace{0.3cm}
+%		\textit{Designation} \\
+%		\textit{Department\_Name} \\
+%		\textit{Institute\_Name} \\
+%		\vspace{1cm}
+%		% Logo
+%		\includegraphics[width=3cm]{Logo} \\
+%		\begin{large}
+%			\vspace{0.6cm}
+%			\textbf{Department\_Name} \\
+%			\vspace{0.4cm}
+%			\textbf{\textit{Institute\_Name}} \\
+%		\end{large}
+%		\vspace{0.6cm}
+%		District -- PIN\_Code, State \\
+%		\vspace{0.2cm}
+%		COUNTRY \\
+%		\vspace{0.6cm}
+%		\displaydate{date}
+%	\end{center}
+%\end{titlepage}
+
+%\pagenumbering{roman}
+
+% Acknowledgement
+
+%\chapter*{Acknowledgement}
+
+% Contents
+
+%\tableofcontents
+
+%\newpage
+
+\pagenumbering{arabic}
+
+% Introduction
+
+%\section{Introduction}
+
+% Body
+
+%\section{<SECTION 1>}
+%\input{sections/content}
+%
+%\section{<SECTION 2>}
+%\input{sections/content2}
+
+% Conclusion
+
+
+% References
+
+%\nocite{djg,maxwell3D,paper5,paper8,paper11}
+%\printbibliography[title={References}]
+
+\end{document}
