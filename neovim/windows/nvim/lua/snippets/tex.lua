@@ -19,6 +19,15 @@ ls.add_snippets("tex", {
             i(1), i(0), rep(1)
         }
     )),
+    s("begf", fmt(
+        [[
+        \begin{{{}}}[{}]
+            {}
+        \end{{{}}}
+        ]], {
+            i(1), i(2), i(0), rep(1)
+        }
+    )),
     -- \chapter{}
     s("chap", fmt(
         [[

@@ -6,6 +6,9 @@
 \usepackage{csquotes}
 \usepackage{setspace}
 
+% loren ipsum
+\usepackage{lipsum}
+
 % Reducing space before chapter heading
 %\usepackage{titlesec}
 %\titleformat{\chapter}[display]   
@@ -62,6 +65,7 @@
 \usepackage{romannum}
 %\AtBeginDocument{\pagenumbering{arabic}}
 \usepackage{enumitem}
+\usepackage{pifont}
 %\usepackage{textgreek}
 \usepackage{xspace}
 \usepackage{multicol}
@@ -215,69 +219,15 @@
 
 \begin{document}
 
-\maketitle
-
-%\begin{titlepage}
-%	\begin{center}
-%		\begin{Large}
-%			\textbf{Project Title} \\
-%		\end{Large}
-%		\vspace{0.8cm}
-%		A REPORT \\[0.2cm]
-%		on \\[0.2cm]
-%		Project \& Thesis Part - \Romannum{2} (SUBJECT\_CODE) \\
-%		\vspace{0.4cm}
-%		\textit{by} \\
-%		\vspace{0.4cm}
-%		% Author
-%		\begin{large}
-%			\textbf{Author\_Name} \\
-%		\end{large}
-%		\vspace{0.3cm}
-%		\textbf{Enrolment No. :} ENROLMENT\_NO \\
-%		\vspace{0.8cm}
-%		\textit{under the supervision of} \\
-%		\vspace{0.8cm}
-%		\textbf{DR\@. SUPERVISOR\_NAME} \\
-%		\vspace{0.3cm}
-%		\textit{Designation} \\
-%		\textit{Department\_Name} \\
-%		\textit{Institute\_Name} \\
-%		\vspace{1cm}
-%		% Logo
-%		\includegraphics[width=3cm]{Logo} \\
-%		\begin{large}
-%			\vspace{0.6cm}
-%			\textbf{Department\_Name} \\
-%			\vspace{0.4cm}
-%			\textbf{\textit{Institute\_Name}} \\
-%		\end{large}
-%		\vspace{0.6cm}
-%		District -- PIN\_Code, State \\
-%		\vspace{0.2cm}
-%		COUNTRY \\
-%		\vspace{0.6cm}
-%		\displaydate{date}
-%	\end{center}
-%\end{titlepage}
-
-%\pagenumbering{roman}
-
-% Acknowledgement
-
-%\chapter*{Acknowledgement}
-
-% Contents
-
-%\tableofcontents
-
-%\newpage
+{\def\null\vskip 2em{}\maketitle}
 
 \pagenumbering{arabic}
 
 % Introduction
 
-%\section{Introduction}
+%\section*{Introduction}
+
+%\lipsum[1-1]
 
 % Body
 
@@ -287,8 +237,26 @@
 %\section{<SECTION 2>}
 %\input{sections/content2}
 
+\input{sections/content}
+
 % Conclusion
 
+\par\vspace{1em}
+\begin{multicols}{2}
+	\begin{table}[H]
+		\begin{tabularx}{\columnwidth}{C}
+			\textbf{Department}
+		\end{tabularx}
+	\end{table}
+	\columnbreak
+	\begin{table}[H]
+		\begin{tabularx}{\columnwidth}{C}
+			-- Sd -- \\
+			Name     \\
+			Department
+		\end{tabularx}
+	\end{table}
+\end{multicols}
 
 % References
 
