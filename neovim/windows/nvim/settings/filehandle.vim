@@ -58,6 +58,8 @@ autocmd FileType tex,st,bib nnoremap <buffer> ti :!"latexindent.exe" -w -s %<cr>
 autocmd FileType java,c,python,yaml,javascript,dockerfile nnoremap <buffer> ti :call CocAction('format')<cr>
 " Autoformat for vim filetype
 autocmd FileType vim nnoremap <silent> ti <Cmd>FiletypeFormat<CR>
+" Autoformat any filetype with coc-prettier (:Prettier)
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 "autocmd FileType javascript nnoremap <buffer> <leader>ah :let @b=line('.')<cr>ggVG:call RangeJsBeautify()<cr>:<C-r>b<cr>
 "autocmd FileType json nnoremap <buffer> <leader>ah :let @b=line('.')<cr>ggVG:call RangeJsonBeautify()<cr>:<C-r>b<cr>
 "autocmd FileType jsx nnoremap <buffer> <leader>ah :let @b=line('.')<cr>ggVG:call RangeJsxBeautify()<cr>:<C-r>b<cr>
