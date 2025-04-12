@@ -23,6 +23,8 @@ else
 
     "Plug 'pacha/vem-tabline'
     "Plug 'crispgm/nvim-tabline'
+    " Neovim GUI
+    Plug 'equalsraf/neovim-gui-shim'
     Plug 'townk/vim-autoclose'
     Plug 'lfv89/vim-interestingwords'
     Plug 'drewtempelmeyer/palenight.vim'
