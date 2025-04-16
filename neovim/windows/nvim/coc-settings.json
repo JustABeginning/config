@@ -1,6 +1,8 @@
 {
   "coc.preferences.formatOnType": true,
   "coc.preferences.formatOnSave": true,
+  // coc-prettier
+  "prettier.disableLanguages": ["tex"],
   // coc-sumneko-lua config
   "Lua.misc.executablePath": "lua-language-server",
   // python config
@@ -13,5 +15,5 @@
   "yaml.completion": true,
   // codelens
   "codeLens.enable": true,
-  "java.referencesCodeLens.enabled": true,
+  "java.referencesCodeLens.enabled": true
 }
