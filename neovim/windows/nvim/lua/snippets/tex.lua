@@ -128,6 +128,14 @@ ls.add_snippets("tex", {
             i(1), i(0)
         }
     )),
+    -- fbox
+    s("fb", fmt(
+        [[
+        \fbox{{{}}}
+        ]], {
+            i(1)
+        }
+    )),
     -- Alignment
     -- columnbreak
     s("cb", t("\\columnbreak")),
