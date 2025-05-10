@@ -61,6 +61,9 @@ else
     Plug 'L3MON4D3/LuaSnip', {'tag': 'v2.*', 'do': 'make install_jsregexp'}
     " Replace <CurrentMajor> by the latest released major (first number of
     " latest release)
+    "
+    " A Vim Plugin for Lively Previewing LaTeX PDF Output
+    "Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
     " Snippets are separated from the engine. Add this if you want them:
     " Plug 'honza/vim-snippets'
