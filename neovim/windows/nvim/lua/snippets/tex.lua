@@ -136,6 +136,14 @@ ls.add_snippets("tex", {
             i(1)
         }
     )),
+    -- fbox
+    s("im", fmt(
+        [[
+        \item {}
+        ]], {
+            i(1)
+        }
+    )),
     -- Alignment
     -- columnbreak
     s("cb", t("\\columnbreak")),
