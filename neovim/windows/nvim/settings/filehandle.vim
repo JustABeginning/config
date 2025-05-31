@@ -60,6 +60,13 @@ autocmd FileType java,c,python,yaml,javascript,dockerfile nnoremap <buffer> ti :
 autocmd FileType vim nnoremap <silent> ti <Cmd>FiletypeFormat<CR>
 " Autoformat any filetype with coc-prettier (:Prettier)
 command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+
+" Autocommand for a single website (i.e. stackoverflow.com) [GhostText]
+let g:nvim_ghost_autostart = 0
+augroup nvim_ghost_user_autocommands
+    au nvim_ghost_user_autocommands User www.overleaf.com setfiletype tex
+augroup END
+"
 "autocmd FileType javascript nnoremap <buffer> <leader>ah :let @b=line('.')<cr>ggVG:call RangeJsBeautify()<cr>:<C-r>b<cr>
 "autocmd FileType json nnoremap <buffer> <leader>ah :let @b=line('.')<cr>ggVG:call RangeJsonBeautify()<cr>:<C-r>b<cr>
 "autocmd FileType jsx nnoremap <buffer> <leader>ah :let @b=line('.')<cr>ggVG:call RangeJsxBeautify()<cr>:<C-r>b<cr>

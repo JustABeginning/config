@@ -62,6 +62,8 @@ else
     " Replace <CurrentMajor> by the latest released major (first number of
     " latest release)
     "
+    " GhostText
+    Plug 'subnut/nvim-ghost.nvim'
     " A Vim Plugin for Lively Previewing LaTeX PDF Output
     "Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
