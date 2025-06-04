@@ -66,6 +66,8 @@ let g:nvim_ghost_autostart = 0
 augroup nvim_ghost_user_autocommands
     au nvim_ghost_user_autocommands User www.overleaf.com setfiletype tex
 augroup END
+nmap <leader>gi :GhostTextStart<cr>
+nmap <leader>gs :GhostTextStop<cr>
 "
 "autocmd FileType javascript nnoremap <buffer> <leader>ah :let @b=line('.')<cr>ggVG:call RangeJsBeautify()<cr>:<C-r>b<cr>
 "autocmd FileType json nnoremap <buffer> <leader>ah :let @b=line('.')<cr>ggVG:call RangeJsonBeautify()<cr>:<C-r>b<cr>

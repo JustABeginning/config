@@ -153,6 +153,18 @@ ls.add_snippets("tex", {
     s("rr", t("\\raggedright")),
     -- raggedleft
     s("rl", t("\\raggedleft")),
+    -- itemize
+    s("iz", t("itemize")),
+    -- enumerate
+    s("en", t("enumerate")),
+    -- label
+    s("lb", fmt(
+        [[
+        label={}
+        ]], {
+            i(1)
+        }
+    )),
     -- Dimension
     s("wt", fmt(
         [[
