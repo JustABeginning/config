@@ -136,7 +136,7 @@ ls.add_snippets("tex", {
             i(1)
         }
     )),
-    -- fbox
+    -- item
     s("im", fmt(
         [[
         \item {}
@@ -212,6 +212,13 @@ ls.add_snippets("tex", {
             i(1)
         }
     )),
+    s("em", fmt(
+        [[
+        \emph{{{}}}
+        ]], {
+            i(1)
+        }
+    )),
     -- Bold Text
     s("bf", fmt(
         [[
@@ -222,7 +229,7 @@ ls.add_snippets("tex", {
     )),
     -- Math
     -- inline math
-    s("im", fmt(
+    s("mi", fmt(
         [[
         ${}$
         ]], {
@@ -230,7 +237,7 @@ ls.add_snippets("tex", {
         }
     )),
     -- display math
-    s("dm", fmt(
+    s("md", fmt(
         [[
         \[ {} \]
         ]], {
