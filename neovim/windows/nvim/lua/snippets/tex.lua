@@ -52,6 +52,14 @@ ls.add_snippets("tex", {
             i(1)
         }
     )),
+    -- \subsection{}
+    s("subss", fmt(
+        [[
+        \subsubsection{{{}}}
+        ]], {
+            i(1)
+        }
+    )),
     -- Figure
     s("figr", fmt(
         [[
