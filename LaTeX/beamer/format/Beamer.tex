@@ -1,0 +1,352 @@
+% Beamer
+\documentclass[aspectratio=169,12pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{xfp}
+\usepackage{anyfontsize}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{lincolngreen}{rgb}{0.11, 0.35, 0.02}
+\definecolor{flavescent}{rgb}{0.97, 0.91, 0.56}
+\definecolor{darkmag}{rgb}{0.55, 0.0, 0.55}
+\definecolor{aog}{rgb}{0.0, 0.5, 0.0}
+\definecolor{electricblue}{rgb}{0.49, 0.98, 1.0}
+\definecolor{awesome}{rgb}{1.0, 0.13, 0.32}
+\definecolor{yaleblue}{rgb}{0.06, 0.3, 0.57}
+\definecolor{unmellowyellow}{rgb}{1.0, 1.0, 0.4}
+\definecolor{egyptianblue}{rgb}{0.06, 0.2, 0.65}
+\usetheme{CambridgeUS}
+\usecolortheme[named=alizarin]{structure}
+\setbeamercolor{title}{bg=flavescent,fg=lincolngreen}
+\setbeamercolor{frametitle}{bg=flavescent,fg=lincolngreen}
+%\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{button}{bg=unmellowyellow,fg=awesome}
+\setbeamertemplate{navigation symbols}{}
+
+% Section and Subsection in TOC
+\setbeamercolor{section in toc}{fg=structure}
+\setbeamertemplate{section in toc}{%
+{\vspace{3mm}\hspace{5mm}\color{darkmag!70!black}\inserttocsectionnumber.}~\inserttocsection}
+\setbeamercolor{subsection in toc}{fg=yaleblue}
+\setbeamertemplate{subsection in toc}{%
+\vspace{3mm}\hspace{15mm}{\color{aog!70!black}\inserttocsubsectionnumber.}~\inserttocsubsection\par}
+\setbeamerfont{section in toc}{size=\footnotesize}
+\setbeamerfont{subsection in toc}{size=\scriptsize}
+
+\usepackage{beamerthemeboxes}
+\setbeamertemplate{caption}[numbered]
+\usepackage[caption=false,font=footnotesize]{subfig}
+\usefonttheme[secheader]{serif}
+\setbeamertemplate{footline}[text line]{\hfill \small{\bf{\insertframenumber \textbar \inserttotalframenumber}}}
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{itemize items}[ball]
+\setbeamertemplate{itemize/enumerate body begin}{\small}
+\newcounter{cont}
+\newcounter{sectionpage}
+\makeatletter
+% allowframebreaks numbering in the title
+\setbeamertemplate{frametitle continuation}{%
+	\setcounter{cont}{\beamer@endpageofframe}%
+	\addtocounter{cont}{1}%
+	\addtocounter{cont}{-\beamer@startpageofframe}%
+	(\insertcontinuationcount/\arabic{cont})%
+}
+% Slide Numbering in TOC
+\long\def\beamer@section[#1]#2{%
+	\beamer@savemode%
+	\mode<all>%
+	\ifbeamer@inlecture
+		\refstepcounter{section}%
+		\beamer@ifempty{#2}%
+		{\long\def\secname{#1}\long\def\lastsection{#1}}%
+		{\global\advance\beamer@tocsectionnumber by 1\relax%
+			\long\def\secname{#2}%
+			\long\def\lastsection{#1}%
+			\setcounter{sectionpage}{\insertframenumber}\stepcounter{sectionpage}%
+			\addtocontents{toc}{\protect\beamer@sectionintoc{\the\c@section}{#2\hfill\thesectionpage}{\the\c@page}{\the\c@part}%
+		{\the\beamer@tocsectionnumber}}}%
+		{\let\\=\relax\xdef\sectionlink{{Navigation\the\c@page}{\noexpand\secname}}}%
+		\beamer@tempcount=\c@page\advance\beamer@tempcount by -1%
+		\beamer@ifempty{#1}{}{%
+			\addtocontents{nav}{\protect\headcommand{\protect\sectionentry{\the\c@section}{#1}{\the\c@page}{\secname}{\the\c@part}}}%
+			\addtocontents{nav}{\protect\headcommand{\protect\beamer@sectionpages{\the\beamer@sectionstartpage}{\the\beamer@tempcount}}}%
+			\addtocontents{nav}{\protect\headcommand{\protect\beamer@subsectionpages{\the\beamer@subsectionstartpage}{\the\beamer@tempcount}}}%
+		}%
+		\beamer@sectionstartpage=\c@page%
+		\beamer@subsectionstartpage=\c@page%
+		\def\insertsection{\expandafter\hyperlink\sectionlink}%
+		\def\insertsubsection{}%
+		\def\insertsubsubsection{}%
+		\def\insertsectionhead{\hyperlink{Navigation\the\c@page}{#1}}%
+		\def\insertsubsectionhead{}%
+		\def\insertsubsubsectionhead{}%
+		\def\lastsubsection{}%
+		\Hy@writebookmark{\the\c@section}{\secname}{Outline\the\c@part.\the\c@section}{2}{toc}%
+		\hyper@anchorstart{Outline\the\c@part.\the\c@section}\hyper@anchorend%
+		\beamer@ifempty{#2}{\beamer@atbeginsections}{\beamer@atbeginsection}%
+	\fi%
+\beamer@resumemode}%
+
+\def\beamer@subsection[#1]#2{%
+	\beamer@savemode%
+	\mode<all>%
+	\ifbeamer@inlecture%
+		\refstepcounter{subsection}%
+		\beamer@ifempty{#2}{\long\def\subsecname{#1}\long\def\lastsubsection{#1}}
+		{%
+			\long\def\subsecname{#2}%
+			\long\def\lastsubsection{#1}%
+			\setcounter{sectionpage}{\insertframenumber}\stepcounter{sectionpage}%
+			\addtocontents{toc}{\protect\beamer@subsectionintoc{\the\c@section}{\the\c@subsection}{#2\hfill\thesectionpage}{\the\c@page}{\the\c@part}{\the\beamer@tocsectionnumber}}%
+		}%
+		\beamer@tempcount=\c@page\advance\beamer@tempcount by -1%
+		\addtocontents{nav}{%
+			\protect\headcommand{\protect\beamer@subsectionentry{\the\c@part}{\the\c@section}{\the\c@subsection}{\the\c@page}{\lastsubsection}}%
+			\protect\headcommand{\protect\beamer@subsectionpages{\the\beamer@subsectionstartpage}{\the\beamer@tempcount}}%
+		}%
+		\beamer@subsectionstartpage=\c@page%
+		\edef\subsectionlink{{Navigation\the\c@page}{\noexpand\subsecname}}%
+		\def\insertsubsection{\expandafter\hyperlink\subsectionlink}%
+		\def\insertsubsubsection{}%
+		\def\insertsubsectionhead{\hyperlink{Navigation\the\c@page}{#1}}%
+		\def\insertsubsubsectionhead{}%
+		\Hy@writebookmark{\the\c@subsection}{#2}{Outline\the\c@part.\the\c@section.\the\c@subsection.\the\c@page}{3}{toc}%
+		\hyper@anchorstart{Outline\the\c@part.\the\c@section.\the\c@subsection.\the\c@page}\hyper@anchorend%
+		\beamer@ifempty{#2}{\beamer@atbeginsubsections}{\beamer@atbeginsubsection}%
+	\fi%
+\beamer@resumemode} 
+\makeatother 
+\setbeamerfont{frametitle}{size=\normalsize}
+\newcommand\ftitle[1]{\frametitle{\large\textbf{#1}}}
+
+% Custom Headings
+
+\usepackage{xfp}
+\def\fontS{12.5pt}
+\newcommand\myheadingS[1]{\par\medskip{\fontsize{\fontS}{\fpeval{1.2*\fontS}}\selectfont\bfseries#1}\par\smallskip}
+\newcommand\myheadingD[5]{\par\vspace{#1}\hspace{#2}{\fontsize{#3}{\fpeval{1.2*(#3)}}\selectfont\bfseries#4}\par\vspace{#5}}
+\newcommand\myheadingB[4]{\myheadingD{#1}{#2}{\fontS}{#3}{#4}}
+\newcommand\myheadingG[5]{\myheadingB{#1}{#2}{#3}{#4}\hspace{#5}}
+\newcommand\myheadingA[1]{\myheadingG{2mm}{0pt}{#1}{3mm}{0pt}}
+\newcommand\myheadingC[2]{\myheadingG{#1}{0pt}{#2}{3mm}{0pt}}
+\newcommand\myheadingP[1]{\myheadingB{2mm}{0pt}{#1}{1mm}}
+\newcommand\myheadingF[1]{\myheadingB{5mm}{0pt}{#1}{2mm}}
+\newcommand\myheadingE[3]{\myheadingB{#1}{0pt}{#2}{#3}}
+
+% Normal
+\usepackage{datetime}
+\newdate{date}{16}{03}{2022}
+\usepackage{graphicx}
+\graphicspath{{.}{./Images/}{../Images/}}
+\usepackage[backend=biber,dateabbrev=false]{biblatex}
+\addbibresource{../References.bib}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage[skip=10pt]{caption}
+\captionsetup[subfloat]{captionskip=10pt}
+\usepackage[export]{adjustbox}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{diffcoeff}
+\usepackage{commath}
+\usepackage{amssymb}
+\usepackage{romannum}
+%\AtBeginDocument{\pagenumbering{arabic}}
+%\usepackage{enumitem}
+%\usepackage{textgreek}
+\usepackage{xspace}
+\usepackage{multicol}
+
+% Define i.e.,
+\def\ie{i.e.,\@\xspace}
+\def\ve{-ve\@\xspace}
+\def\pe{+ve\@\xspace}
+\def\wrt{w.r.t.\@\xspace}
+\def\eg{e.g.\@\xspace}
+
+% For Tables
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multirow}
+
+% Changing tabularxcolumn type
+%\let\oldtabx\tabularxcolumn
+%\newcommand\resetX{\let\tabularxcolumn\oldtabx}
+%\renewcommand\tabularxcolumn[1]{m{#1}}
+
+%\newcounter{count}
+%\newcommand\SL{\thecount\stepcounter{count}}
+%\newcolumntype{N}{>{\centering\thecount\stepcounter{count}}X}
+\renewcommand{\figurename}{Fig.}
+
+% Numbering equations in align* & gather* environments
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}} 
+
+% For Vectors
+\newcommand\ora{\overrightarrow}
+
+% For Rightarrow
+\newcommand\ra{\rightarrow}
+
+% For Imply
+\newcommand\Ra{\Rightarrow}
+
+% Tab Space
+%\newcommand\tab{\hspace*{10mm}}
+%\newcommand\tabs{\hspace*{5mm}}
+
+% For equation conditions
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{x}{>{\raggedright\arraybackslash}X}
+\newcolumntype{m}{>{$}c<{$}}
+\newcolumntype{y}{>{$}l<{$}}
+\newcolumntype{z}{>{$}r<{$}}
+\newcolumntype{M}{>{\hspace{0.3\textwidth}$}c<{$}}
+\newcolumntype{P}{>{\hspace{0.2\textwidth}$}c<{$}}
+\newcolumntype{Q}{>{\hspace{0.05\textwidth}$}c<{$}}
+\newcolumntype{D}{>{\hspace{0.2\textwidth}\centering\arraybackslash}X}
+\newcolumntype{R}{>{\hspace{0.3\textwidth}$}r<{$}}
+\newcolumntype{Z}{>{\hspace{0.2\textwidth}$}r<{$}}
+\newenvironment{condition}[1]
+{\hspace{0.3\textwidth} #1,\par\medskip
+	\tabularx{\columnwidth}{M m x}
+}
+{\endtabularx\\[\belowdisplayskip]}
+\newenvironment{condition*}[1]
+{#1,\par\medskip
+	\tabularx{\columnwidth}{P m x}
+}
+{\endtabularx\\[\belowdisplayskip]}
+\newenvironment{conditionB*}[1]
+{#1,\par\medskip
+	\tabularx{\columnwidth}{Q m x}
+}
+{\endtabularx\\[\belowdisplayskip]}
+\newenvironment{conditionC*}[1]
+{\hspace{-7.3mm} #1,\par\medskip
+	\tabularx{\columnwidth}{P m x}
+}
+{\endtabularx\\[\belowdisplayskip]}
+\newenvironment{describe}[1]
+{#1,\par\medskip
+	\tabularx{\columnwidth}{D m x}
+}
+{\endtabularx\\[\belowdisplayskip]}
+\newenvironment{describe*}[1]
+{#1,\par\medskip
+	\tabularx{\columnwidth}{z m y}
+}
+{\endtabularx\\[\belowdisplayskip]}
+\newenvironment{describeB*}[1]
+{\hspace{0.25\textwidth} #1,\par\medskip
+	\tabularx{\columnwidth}{R m y}
+}
+{\endtabularx\\[\belowdisplayskip]}
+\newenvironment{describeC*}[1]
+{#1,\par\medskip
+	\tabularx{\columnwidth}{Z m y}
+}
+{\endtabularx\\[\belowdisplayskip]}
+
+% Equation as an item in list
+%\newcommand{\itemEq}[1]{%
+%	\begingroup%
+%	\setlength{\abovedisplayskip}{0pt}%
+%	\setlength{\belowdisplayskip}{0pt}%
+%	\parbox[c]{\linewidth}{\begin{gather*}#1\end{gather*}}%
+%\endgroup}
+
+% Reluctance
+\newcommand\rel{\mathcal R}
+
+% Start
+
+\begin{document}
+\title{\textbf{Topic}}
+\author{\textbf{Report Presentation} \\
+{\scriptsize by} \\
+\textbf{Name} \\{\scriptsize (\textbf{Enrolment No.:} xxxxx)} \\
+%	\vspace{0.1in}
+{\scriptsize Designation} \\
+\vspace{1mm}
+{\scriptsize\emph{under the supervision of}} \\
+\vspace{1mm}
+{\textbf{Guide}} \\
+{\scriptsize Department} \\
+%\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=1.2cm]{Logo}
+\end{center}
+%\end{figure}
+\vspace{-0.25cm}
+{\scriptsize \displaydate{date}}}
+%\date{Feb, 2021}
+
+% Title
+
+\begin{frame}[plain,noframenumbering]
+	\titlepage
+\end{frame}
+
+\scriptsize
+\setcounter{framenumber}{0}
+
+% Presentation Outline
+
+\begin{frame}
+	\ftitle{Presentation Outline}
+	\tableofcontents
+\end{frame}
+
+% Work Progress
+
+\section{Work Progress}
+
+\subsection{Overall Work}
+\begin{frame}
+	\ftitle{Overall Work Assigned}
+	% Changing Enumerate List Style in Beamer
+	\setbeamertemplate{enumerate item}{\insertenumlabel)}
+	\renewcommand{\theenumi}{\alph{enumi}}
+	\begin{enumerate}
+		\item Test Work 1
+		\item Test Work 2
+		\item Test Work 3
+	\end{enumerate}
+\end{frame}
+%\subsection{Weekly Work}
+%\begin{frame}
+%	\ftitle{Weekly Work Assigned}
+%\end{frame}
+\subsection{Work Done}
+\begin{frame}
+	\ftitle{Task Completed}
+\end{frame}
+
+% Report
+
+% References
+
+\section{References}
+
+\begin{frame}
+	\ftitle{References}
+	%\nocite{paper1,paper2,paper3,fzkin}
+	\printbibliography
+\end{frame}
+
+% Acknowledgement
+
+\section{Acknowledgement}
+
+\begin{frame}
+	\ftitle{Acknowledgement}
+\end{frame}
+
+% Thank You
+
+\begin{frame}
+	\centering
+	\large
+	\textcolor{egyptianblue}{\textbf{THANK YOU FOR YOUR KIND ATTENTION~!}}
+\end{frame}
+\end{document}
