@@ -1,0 +1,13 @@
+D:\Experiment\GitHub\nasm-lsp\target\release\deps\quote-e1917b32df1e7d09.rmeta: C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\lib.rs C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\ext.rs C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\format.rs C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\ident_fragment.rs C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\to_tokens.rs C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\runtime.rs C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\spanned.rs
+
+D:\Experiment\GitHub\nasm-lsp\target\release\deps\libquote-e1917b32df1e7d09.rlib: C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\lib.rs C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\ext.rs C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\format.rs C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\ident_fragment.rs C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\to_tokens.rs C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\runtime.rs C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\spanned.rs
+
+D:\Experiment\GitHub\nasm-lsp\target\release\deps\quote-e1917b32df1e7d09.d: C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\lib.rs C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\ext.rs C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\format.rs C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\ident_fragment.rs C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\to_tokens.rs C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\runtime.rs C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\spanned.rs
+
+C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\lib.rs:
+C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\ext.rs:
+C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\format.rs:
+C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\ident_fragment.rs:
+C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\to_tokens.rs:
+C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\runtime.rs:
+C:\Users\saswa\.cargo\registry\src\github.com-1ecc6299db9ec823\quote-1.0.3\src\spanned.rs:

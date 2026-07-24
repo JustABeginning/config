@@ -1,0 +1,6 @@
+# File(s)
+indent.log
+*.bak*
+
+# Folder(s)
+build/
