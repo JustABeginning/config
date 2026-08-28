@@ -78,7 +78,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-source ~/GitHub/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+#source ~/GitHub/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+autoload -Uz compinit && compinit
+zstyle ':completion:*' menu select
 
 # User configuration
 
