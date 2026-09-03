@@ -135,6 +135,12 @@ return
 <^>!i::
 Send, {Esc}
 return
+!t::
+Send, {Space 2}
+return
+<^>!t::
+Send, {Space 2}
+return
 !c::
 Send, {Delete}
 return

@@ -1,0 +1,23 @@
+% Introduction
+
+{\def\null\vskip 2em{}\maketitle}
+
+\begin{itemize}
+	\item \textbf{COMPLAINT NO.} \newcommand{\complaint}{XX/XX/XXXX}
+	      \setlength{\rulelength}{13em}
+	      \rule{0.5\rulelength}{0pt}% Move cursor to the middle of the line
+	      \raisebox{0.5em}{\makebox[0pt][c]{\complaint}}% Center the text here
+	      \hspace{-0.5\rulelength}% Move cursor back to the start
+	      \rule{\rulelength}{1pt}% Draw the full rule line
+	      \hspace{1ex} of \the\year
+	      	                
+	\item \textbf{IN THE MATTER OF}
+	      \begin{itemize}
+	      	\item \textbf{Complainant:}
+	      \end{itemize}
+	      	      	      	                
+	\item \textbf{VERSUS}
+	      \begin{itemize}
+	      	\item \textbf{Opposition Party:}
+	      \end{itemize}
+\end{itemize}

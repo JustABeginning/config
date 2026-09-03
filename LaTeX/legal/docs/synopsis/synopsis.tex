@@ -1,0 +1,35 @@
+% Preamble
+
+\documentclass[12pt,a4paper,oneside]{article}
+
+\input{docs/template/preamble}
+
+% Custom Date
+\usepackage[en-US]{datetime2}
+\newcommand{\printdate}[1]{
+    \DTMsavedate{newdate}{#1}
+    \DTMusedate{newdate}
+}
+
+% START
+
+\begin{document}
+
+\pagenumbering{arabic}
+
+\setcounter{page}{1}
+
+% Introduction
+
+\input{docs/template/introduction}
+
+% Body
+
+{\centering \section*{SYNOPSIS} \par}
+\input{sections/content}
+
+% Conclusion
+
+\input{docs/template/conclusion}
+
+\end{document}

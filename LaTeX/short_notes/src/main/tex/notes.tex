@@ -90,11 +90,11 @@
 %\newcommand\resetX{\let\tabularxcolumn\oldtabx}
 %\renewcommand\tabularxcolumn[1]{m{#1}}
 
-%% Serial No Column
+% Serial No. Column
 %\newcounter{count}
 %\newcommand\SL{\thecount\stepcounter{count}}
-%\newcolumntype{N}{>{\centering\thecount\stepcounter{count}}X}
-%\newcommand{\noserial}{\multicolumn{1}{|c|}{}}
+%\newcolumntype{N}{>{\thecount\stepcounter{count}}c}
+%\newcommand{\noserial}[1]{\multicolumn{1}{|c|}{#1}}
 
 %% For Long Line
 \usepackage{seqsplit}
@@ -184,7 +184,7 @@
 {\end{adjustbox}}
 %%
 
-%%
+%% Caption
 \renewcommand{\figurename}{Fig.}
 \renewcommand{\figref}{Fig.~\ref}
 \newcommand{\tabref}{Table~\ref}
